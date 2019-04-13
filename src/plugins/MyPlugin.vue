@@ -1,16 +1,16 @@
 <script>
 var MyPlugin = {
-  install: function(Vue) {
-    console.log("MyPlugin is loaded.");
+  install: function (Vue) {
+    console.log('MyPlugin is loaded.');
 
     var store = new Vue({
       data: { scrollY: 0 }
     });
 
     var timer = null;
-    window.addEventListener("scroll", function() {
+    window.addEventListener('scroll', function () {
       if (timer === null) {
-        timer = setTimeout(function() {
+        timer = setTimeout(function () {
           store.scrollY = window.scrollY;
           clearTimeout(timer);
           timer = null;
@@ -24,4 +24,3 @@ var MyPlugin = {
 
 export default MyPlugin;
 </script>
-
