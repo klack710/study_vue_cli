@@ -6,5 +6,19 @@
       <router-link :to="{ name: 'product', params: { id: 1 } }" tag="button">商品情報1</router-link>
     </nav>
     <router-view/>
+    <p>{{ message }}</p>
+    <EditForm/>
   </div>
 </template>
+
+<script>
+import EditForm from '@/components/EditForm.vue';
+export default {
+  name: 'app',
+  components: { EditForm },
+  computed: {
+    // ローカルのmessageとストアのmessageを同期
+    message () { return this.$store.getters.message; }
+  }
+};
+</script>
